@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
 
     -- cosmetics
     use { 'catppuccin/nvim', as = 'catppuccin' }
+    use 'Mofiqul/vscode.nvim'
 
     -- treesitter
     use {

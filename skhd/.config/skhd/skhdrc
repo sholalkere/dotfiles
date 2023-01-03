@@ -27,8 +27,8 @@ alt - l : yabai -m window --focus east
  # cmd + alt - f : yabai -m window --togle nativefullscreen
  # cmd + alt - s : yabai -m window --toggle sticky
  # cmd + alt - l : yabai -m window --toggle float
-alt - s : yabai -m window --toggle sticky
-alt - f : yabai -m window --toggle zoom-fullscreen
+shift + alt - s : yabai -m window --toggle sticky
+shift + alt - f : yabai -m window --toggle zoom-fullscreen
 
 alt - tab : yabai -m space --focus recent
 alt - 1 : yabai -m space --focus 1
