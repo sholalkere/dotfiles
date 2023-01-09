@@ -13,9 +13,9 @@ if not vs_ok then
     return
 end
 
-vscode.setup({
-    transparent = true,
-})
+-- vscode.setup({
+--     transparent = true,
+-- })
 
--- vim.cmd('colorscheme catppuccin')
-vim.cmd('colorscheme vscode')
+vim.cmd('colorscheme catppuccin')
+-- vim.cmd('colorscheme vscode')
