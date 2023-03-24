@@ -6,7 +6,7 @@ local options = {
     colorcolumn = '80',
 
     -- colors
-    termguicolors = true,
+    termguicolors = false,
 
     -- indentation
     tabstop = 4,

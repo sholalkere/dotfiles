@@ -1,6 +1,5 @@
 # alt - return : open -na /opt/homebrew/bin/alacritty
 alt - return : open -na /opt/homebrew/bin/wezterm
-# alt - return : open -na Terminal
 
 ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
@@ -11,25 +10,13 @@ shift + alt - j : yabai -m window --swap south
 shift + alt - k : yabai -m window --swap north
 shift + alt - l : yabai -m window --swap east
 
-# move window
-shift + alt - h : yabai -m window --warp west
-shift + alt - j : yabai -m window --warp south
-shift + alt - k : yabai -m window --warp north
-shift + alt - l : yabai -m window --warp east
-
+# change window
 alt - h : yabai -m window --focus west
 alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
 alt - l : yabai -m window --focus east
 
- # alt + ctrl - f : yabai -m window --toggle zoom-fullscreen
- # alt + ctrl - s : yabai -m window --toggle float
- # cmd + alt - f : yabai -m window --togle nativefullscreen
- # cmd + alt - s : yabai -m window --toggle sticky
- # cmd + alt - l : yabai -m window --toggle float
-shift + alt - s : yabai -m window --toggle sticky
-shift + alt - f : yabai -m window --toggle zoom-fullscreen
-
+# change workspace
 alt - tab : yabai -m space --focus recent
 alt - 1 : yabai -m space --focus 1
 alt - 2 : yabai -m space --focus 2
@@ -42,6 +29,7 @@ alt - 8 : yabai -m space --focus 8
 alt - 9 : yabai -m space --focus 9
 alt - 0 : yabai -m space --focus 10
 
+# move window
 shift + alt - 1 : yabai -m window --space  1 
 shift + alt - 2 : yabai -m window --space  2
 shift + alt - 3 : yabai -m window --space  3
@@ -57,3 +45,8 @@ shift + alt - 0 : yabai -m window --space 10
 alt + ctrl - n : yabai -m window --focus stack.next || yabai -m window --focus stack.first
 alt + ctrl - p : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 
+# toggle float
+shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+# maximize
+shift + alt - m : yabai -m window --toggle zoom-fullscreen
