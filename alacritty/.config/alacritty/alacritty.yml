@@ -6,8 +6,8 @@ env:
 
 window:
   padding:
-    x: 5
-    y: 5
+    x: 10
+    y: 10
 
   decorations: buttonless
 
@@ -21,38 +21,85 @@ font:
 
   size: 18.0
 
-# github Alacritty Colors
 colors:
   # Default colors
   primary:
-    background: '0xffffff'
-    foreground: '0x24292f'
+    background: "#EFF1F5" # base
+    foreground: "#4C4F69" # text
+      # Bright and dim foreground colors
+    dim_foreground: "#4C4F69" # text
+    bright_foreground: "#4C4F69" # text
 
-  # Normal colors
-  normal:
-    black:   '0x24292e'
-    red:     '0xd73a49'
-    green:   '0x28a745'
-    yellow:  '0xdbab09'
-    blue:    '0x0366d6'
-    magenta: '0x5a32a3'
-    cyan:    '0x0598bc'
-    white:   '0x6a737d'
+      # Cursor colors
+    cursor:
+      text: "#EFF1F5" # base
+      cursor: "#DC8A78" # rosewater
+    vi_mode_cursor:
+      text: "#EFF1F5" # base
+      cursor: "#7287FD" # lavender
 
-  # Bright colors
-  bright:
-    black:   '0x959da5'
-    red:     '0xcb2431'
-    green:   '0x22863a'
-    yellow:  '0xb08800'
-    blue:    '0x005cc5'
-    magenta: '0x5a32a3'
-    cyan:    '0x3192aa'
-    white:   '0xd1d5da'
+        # Search colors
+      search:
+        matches:
+          foreground: "#EFF1F5" # base
+          background: "#6C6F85" # subtext0
+        focused_match:
+          foreground: "#EFF1F5" # base
+          background: "#40A02B" # green
+        footer_bar:
+          foreground: "#EFF1F5" # base
+          background: "#6C6F85" # subtext0
 
-  indexed_colors:
-    - { index: 16, color: '0xd18616' }
-    - { index: 17, color: '0xcb2431' }
+            # Keyboard regex hints
+          hints:
+            start:
+              foreground: "#EFF1F5" # base
+            background: "#DF8E1D" # yellow
+          end:
+            foreground: "#EFF1F5" # base
+            background: "#6C6F85" # subtext0
+
+              # Selection colors
+            selection:
+              text: "#EFF1F5" # base
+            background: "#DC8A78" # rosewater
+
+              # Normal colors
+            normal:
+              black: "#5C5F77" # subtext1
+            red: "#D20F39" # red
+            green: "#40A02B" # green
+            yellow: "#DF8E1D" # yellow
+            blue: "#1E66F5" # blue
+            magenta: "#EA76CB" # pink
+            cyan: "#179299" # teal
+            white: "#ACB0BE" # surface2
+
+              # Bright colors
+            bright:
+              black: "#6C6F85" # subtext0
+            red: "#D20F39" # red
+            green: "#40A02B" # green
+            yellow: "#DF8E1D" # yellow
+            blue: "#1E66F5" # blue
+            magenta: "#EA76CB" # pink
+            cyan: "#179299" # teal
+            white: "#BCC0CC" # surface1
+
+              # Dim colors
+            dim:
+              black: "#5C5F77" # subtext1
+            red: "#D20F39" # red
+            green: "#40A02B" # green
+            yellow: "#DF8E1D" # yellow
+            blue: "#1E66F5" # blue
+            magenta: "#EA76CB" # pink
+            cyan: "#179299" # teal
+            white: "#ACB0BE" # surface2
+
+            indexed_colors:
+              - { index: 16, color: "#FE640B" }
+              - { index: 17, color: "#DC8A78" }
 
 key_bindings:
   # Use option as meta

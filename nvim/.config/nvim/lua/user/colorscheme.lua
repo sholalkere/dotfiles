@@ -1,7 +1,11 @@
-local gh_ok, github = pcall(require, 'github-theme')
-if not gh_ok then
+local cat_ok, catppuccin = pcall(require, 'catppuccin')
+if not cat_ok then
     return
 end
 
-vim.cmd("colorscheme github_light")
+catppuccin.setup({
+    flavour = 'latte',
+})
+
+vim.cmd('colorscheme catppuccin')
 
