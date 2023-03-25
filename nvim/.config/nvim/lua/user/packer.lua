@@ -15,8 +15,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- cosmetics
-    use { 'catppuccin/nvim', as = 'catppuccin' }
-    use 'Mofiqul/vscode.nvim'
+    use 'projekt0n/github-nvim-theme'
 
     -- treesitter
     use {

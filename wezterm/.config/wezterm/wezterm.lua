@@ -5,7 +5,6 @@ return {
     audible_bell = 'Disabled',
     check_for_updates = false,
     color_scheme = 'Google Light (base16)',
-    -- font = wezterm.font('Fira Code'),
     font = wezterm.font('Fira Code'),
     font_size = 14.0,
     hide_tab_bar_if_only_one_tab = true,
