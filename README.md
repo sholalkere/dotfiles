@@ -6,8 +6,3 @@
 #### Usage
 To install configuration run `stow <app>`
 
-#### Currently Using
-- yabai
-- skhd
-- alacritty
-- neovim
