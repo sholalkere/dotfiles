@@ -1,8 +1,13 @@
-### dotfiles
+## sholalkere's dotfiles
 
 #### Requirements
 - `stow`
 
 #### Usage
-`stow <app>`
+To install configuration run `stow <app>`
 
+#### Currently Using
+- yabai
+- skhd
+- alacritty
+- neovim
