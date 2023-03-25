@@ -57,7 +57,7 @@ yabai -m config mouse_modifier               fn
 yabai -m config mouse_action1                move
 yabai -m config mouse_action2                resize
 yabai -m config mouse_drop_action            swap
-yabai -m config window_shadow                float
+yabai -m config window_shadow                off
 
 # general space settings
 yabai -m config layout                       bsp
@@ -70,6 +70,9 @@ yabai -m config window_gap                   0
 # make desktop 5 stack (vscode)
 yabai -m space 5 --layout stack
 yabai -m space 6 --layout stack
+
+# focus newest alacritty window
+yabai -m signal --add event=window_created app="Alacritty" action="yabai -m window --focus \$(yabai -m query --windows --space | jq 'sort_by(.id)[-1].id')"
 
 # added settings
 echo "yabai configuration loaded.."
