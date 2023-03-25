@@ -1,3 +1,8 @@
-# My Personal Dotfiles
+### dotfiles
 
-Made for usage with `stow`.
+#### Requirements
+- `stow`
+
+#### Usage
+`stow <app>`
+
