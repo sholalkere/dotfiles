@@ -15,7 +15,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- cosmetics
-    use { 'catppuccin/nvim', name = 'catppuccin' }
+    use { 'navarasu/onedark.nvim' }
 
     -- treesitter
     use {

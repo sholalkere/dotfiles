@@ -8,5 +8,6 @@ treesitter.setup({
     ensure_installed = { 'bash', 'cpp', 'latex', 'lua', 'python' },
     highlight = {
         enable = true,
+        disable = { 'latex' },
     },
 })
