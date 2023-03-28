@@ -8,5 +8,7 @@ onedark.setup( {
     transparent = false,
 })
 
+vim.cmd('set background=light')
+
 onedark.load()
 
