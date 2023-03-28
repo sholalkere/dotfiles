@@ -5,6 +5,7 @@ end
 
 onedark.setup( {
     style = 'light',
+    transparent = true,
 })
 
 onedark.load()
