@@ -16,12 +16,19 @@ return require('packer').startup(function(use)
 
     -- cosmetics
     use { 'navarasu/onedark.nvim' }
-    use { 'nvim-lualine/lualine.nvim' }
 
     -- treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
         run = function() require('nvim-treesitter.install').update({ with_sinc = true}) end,
+    }
+
+    -- comment
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
     }
 
     -- Automatically set up your configuration after cloning packer.nvim

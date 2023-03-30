@@ -31,6 +31,7 @@ yabai -m rule --add app="^Photoshop*" manage=off
 yabai -m rule --add app="^Illustrator*" manage=off
 yabai -m rule --add app="^Preview*" manage=off
 yabai -m rule --add app="^VLC media player*" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
 
 # global settings
 yabai -m config mouse_follows_focus          off
