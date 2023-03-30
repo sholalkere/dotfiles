@@ -14,10 +14,6 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
-    -- cosmetics
-    use { 'navarasu/onedark.nvim' }
-    use { 'Shatur/neovim-ayu' }
-
     -- treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
