@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
 
     -- cosmetics
     use { 'navarasu/onedark.nvim' }
+    use { 'Shatur/neovim-ayu' }
 
     -- treesitter
     use {

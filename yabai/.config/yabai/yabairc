@@ -74,6 +74,9 @@ yabai -m space 6 --layout stack
 # focus newest alacritty window
 yabai -m signal --add event=window_created app="Alacritty" action="yabai -m window --focus \$(yabai -m query --windows --space | jq 'sort_by(.id)[-1].id')"
 
+# focus previous window when alacritty dies
+yabai -m signal --add event=window_destroyed app="Alacritty" action="yabai -m window --focus \$(yabai -m query --windows --space | jq '.[0].id')"
+
 # added settings
 echo "yabai configuration loaded.."
 # YABAI_CERT=yabai-cert sh -c "$(curl -fsSL "https://git.io/update-yabai")" &
