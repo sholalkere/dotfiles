@@ -1,5 +1,6 @@
 # alt - return : open -na /opt/homebrew/bin/alacritty
 # alt - return : open -na /opt/homebrew/bin/wezterm
+shift + alt - return : wezterm || open -na /opt/homebrew/bin/wezterm
 alt - return : alacritty msg create-window || open -na /opt/homebrew/bin/alacritty
 
 ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
