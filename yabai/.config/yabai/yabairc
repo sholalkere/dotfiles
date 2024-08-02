@@ -15,22 +15,17 @@
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
-# float system prefs
-yabai -m rule --add app="^League of Legends" manage=off
-yabai -m rule --add app="^Riot Client" manage=off
-yabai -m rule --add app="^zoom" manage=off
-yabai -m rule --add app="^Cisco" manage=off
-yabai -m rule --add app="^FaceTime" manage=off
-yabai -m rule --add app="^Minecraft Launcher$" manage=off
-yabai -m rule --add app="^Steam$" manage=off
-yabai -m rule --add app="^Stardew Valley$" manage=off
-yabai -m rule --add app="^Finder$" manage=off
-yabai -m rule --add app="^System Settings*" manage=off
-yabai -m rule --add app="^Photoshop*" manage=off
-yabai -m rule --add app="^Illustrator*" manage=off
-yabai -m rule --add app="^Preview*" manage=off
-yabai -m rule --add app="^VLC media player*" manage=off
-yabai -m rule --add app="^Activity Monitor$" manage=off
+floating="^(zoom|League of Legends|Riot Client|Cisco|FaceTime|Finder|System Settings|Preview|Activity Monitor|CrossOver|Risk of Rain 2|Anki)"
+yabai -m rule --apply app="$floating" manage=off sub-layer=normal
+yabai -m rule --add app="$floating" manage=off sub-layer=normal
+
+# yabai -m rule --apply app!="$floating" sub-layer=normal
+yabai -m rule --add app=".*" sub-layer=normal
+
+yabai -m rule --apply app="^MATLAB" title="^Figure" manage=off sub-layer=normal
+
+yabai -m rule --apply app="^Cisco"  manage=off sub-layer=normal
+yabai -m rule --apply app="Finder" manage=off sub-layer=normal
 
 # global settings
 yabai -m config mouse_follows_focus          off
@@ -66,16 +61,20 @@ yabai -m config left_padding                 0
 yabai -m config right_padding                0
 yabai -m config window_gap                   0
 
-# make desktop 5 stack (vscode)
+# stack vscode (space 5) and chat apps (space 6)
 yabai -m space 5 --layout stack
 yabai -m space 6 --layout stack
 
-# focus newest alacritty window
-yabai -m signal --add event=window_created app="Alacritty" action="yabai -m window --focus \$(yabai -m query --windows --space | jq 'sort_by(.id)[-1].id')"
+# focus previous window when window dies even if other instances exist
+yabai -m signal --add event=window_destroyed app=".*" action="yabai -m window --focus \$(yabai -m query --windows --space | jq '.[0].id')"
+# yabai -m signal --add event=window_created app=".*" action="yabai -m window --focus \$(yabai -m query --windows --space | jq '.[-1].id')"
 
-# focus previous window when alacritty dies
-yabai -m signal --add event=window_destroyed app="Alacritty" action="yabai -m window --focus \$(yabai -m query --windows --space | jq '.[0].id')"
+# focus newest wezterm
+# yabai -m signal --add event=window_created app="wezterm-gui" action="yabai -m window --focus \$(yabai -m query --windows --space | jq '.[0].id')"
+
+yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
+
+yabai -m rule --apply
 
 # added settings
 echo "yabai configuration loaded.."
-# YABAI_CERT=yabai-cert sh -c "$(curl -fsSL "https://git.io/update-yabai")" &
