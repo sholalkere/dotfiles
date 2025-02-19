@@ -1,7 +1,6 @@
 alt - return : wezterm start
-shift + alt - return : alacritty msg create-window || open -na /opt/homebrew/bin/alacritty
+shift + alt - return : open -na /Applications/Ghostty.app
 
-# ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 ctrl + alt + cmd - r : yabai --restart-service
 
 # swap window

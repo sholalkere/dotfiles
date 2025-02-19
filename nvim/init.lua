@@ -21,9 +21,11 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-vim.o.expandtab = true
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.number = true
+vim.opt.relativenumber = true
 
 
 require("lazy").setup({
@@ -31,7 +33,7 @@ require("lazy").setup({
         "nvim-treesitter/nvim-treesitter",
         config = function()
             require("nvim-treesitter.configs").setup({
-                ensure_installed = { "lua", "luadoc", "python", "vim", "vimdoc" },
+                ensure_installed = { "cpp", "lua", "luadoc", "python", "vim", "vimdoc" },
                 highlight = { enable = true },
             })
         end,
@@ -45,6 +47,12 @@ require("lazy").setup({
             vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
             vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
             vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+        end,
+    },
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
+            require("lspconfig").pyright.setup({})
         end,
     },
     {
