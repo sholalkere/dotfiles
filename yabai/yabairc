@@ -16,11 +16,10 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # floating
 floating="^(zoom|League of Legends|Riot Client|Cisco|FaceTime|Finder|System Settings|Preview|Activity Monitor|CrossOver|Risk of Rain 2|Anki|League|Blitz|Blender)"
-yabai -m rule --apply app="$floating" manage=off sub-layer=normal
 yabai -m rule --add app="$floating" manage=off sub-layer=normal
-yabai -m rule --apply app="^MATLAB" title="^Figure" manage=off sub-layer=normal
-
-yabai -m rule --apply app=".*" sub-layer=normal
+yabai -m rule --add app="^MATLAB" title="^Figure" manage=off sub-layer=normal
+yabai -m rule --add app=".*" sub-layer=normal
+yabai -m rule --apply
 
 # global settings
 yabai -m config mouse_follows_focus          off
